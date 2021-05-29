@@ -14,20 +14,16 @@ const player = new Player(GAME_WIDTH, GAME_HEIGHT)
 const enemy = new Enemy(GAME_WIDTH, GAME_HEIGHT)
 const egg = new Egg(GAME_WIDTH, GAME_HEIGHT)
 
-new InputHandler(player)
+new InputHandler(player, egg, enemy)
 
-let lastTime = 0;
 
-function gameLoop(timestamp) {
-    let deltaTime = timestamp - lastTime
-    lastTime = timestamp
-
+export function gameLoop() {
     context.clearRect(0, 0, 800, 600)
 
     player.update()
     player.draw(context)
 
-    enemy.update(player)
+    enemy.update(player, egg)
     enemy.draw(context)
 
     egg.update(player)

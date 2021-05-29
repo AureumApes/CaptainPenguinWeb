@@ -17,14 +17,14 @@ export default class Enemy {
         context.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 
-    update(player) {
+    update(player, egg) {
         this.position.y += this.speed
         if (this.position.y > this.gameHeight - 100) {
             this.position.y = 0
             this.position.x = Math.floor(Math.random() * this.gameWidth - 25);
         }
         if (this.rectIntersect(this.position.x, this.position.y, this.width, this.height, player.position.x, player.position.y, player.width, player.height)) {
-            player.die()
+            player.die(this, egg)
         }
     }
 

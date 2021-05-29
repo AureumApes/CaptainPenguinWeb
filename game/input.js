@@ -1,5 +1,5 @@
 export default class InputHandler {
-    constructor(paddle) {
+    constructor(paddle, egg, enemy) {
         document.addEventListener("keydown", event => {
             switch (event.keyCode) {
                 case 37:
