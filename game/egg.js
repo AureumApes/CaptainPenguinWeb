@@ -23,7 +23,7 @@ export default class Egg {
 
     update(player) {
         this.position.y += this.speed
-        if (this.position.y > this.gameHeight - 100) {
+        if (this.position.y > this.gameHeight) {
             this.position.y = 0
             this.position.x = Math.floor(Math.random() * this.gameWidth);
         }
